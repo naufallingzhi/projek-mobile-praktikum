@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NaufalLingzhi_TIA" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.NaufalLingzhi_TIA" parent="Base.Theme.NaufalLingzhi_TIA" />
+
+    <!-- Style Dasar untuk Teks Anime ber-Shadow -->
+    <style name="AnimeTextStyle">
+        <item name="android:fontFamily">@font/dynapuff</item>
+        <item name="android:shadowColor">@color/shadow_black</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+
+    <!-- Style untuk Kolom Input -->
+    <style name="AnimeEditText" parent="AnimeTextStyle">
+        <item name="android:layout_width">275dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColor">@color/silver</item>
+        <item name="android:textColorHint">@color/silver</item>
+    </style>
+
+    <!-- Style untuk Tombol -->
+    <style name="AnimeButton" parent="AnimeTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">75dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/silver</item>
+        <item name="android:textColorHint">@color/silver</item>
+    </style>
+</resources>

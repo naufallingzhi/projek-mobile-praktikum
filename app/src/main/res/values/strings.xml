@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NaufalLingzhi_TIA</string>
+    <string name="h_login">Halaman Login</string>
+    <string name="hint_username">Masukkan Username</string>
+    <string name="hint_password">Masukkan Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_logout">LogOut</string>
+    <string name="btn_snackbar">Judul Projek</string>
+    <string name="btn_kembali">Kembali</string>
+    <string name="deskripsijudul">Smart City (Kota Cerdas) pada dasarnya adalah upaya
+        mengelola dan memecahkan berbagai persoalan perkotaan dengan bantuan teknologi
+        informasi agar kualitas hidup warganya menjadi lebih baik. Dalam konteks
+        pembuatan aplikasi mobile di Android Studio, konsep ini diwujudkan dengan
+        mengubah smartphone yang digenggam warga menjadi "sensor hidup" sekaligus
+        pusat akses layanan kota. Ponsel Android memiliki beragam kemampuan bawaan
+        yang sangat kaya, seperti kamera, koneksi internet real-time, hingga sensor
+        lokasi (GPS). Melalui aplikasi yang kamu rancang, kemampuan perangkat tersebut
+        dihubungkan langsung ke pangkalan data digital, sehingga interaksi antara warga
+        dan lingkungan sekitarnya tidak lagi manual atau berbelit-belit.</string>
+</resources>

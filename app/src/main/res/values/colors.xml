@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="silver">#C4C4C4</color>
+    <color name="blue_login">#0000FF</color>
+    <color name="silver_registrasi">#C4C4C4</color>
+    <color name="shadow_black">#000000</color>
+    <color name="cyan_registrasi">#00B4D8</color>
+</resources>
