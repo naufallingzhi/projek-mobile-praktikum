@@ -3,11 +3,13 @@ package com.example.naufallingzhi_tia
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.naufallingzhi_tia.databinding.ActivityMainBinding
 import com.example.naufallingzhi_tia.pertemuan5.LimaActivity
+import com.example.naufallingzhi_tia.pertemuan6.EnamActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         // Mengambil data dari LoginActivity
         val user = intent.getStringExtra("username")
         val pass = intent.getStringExtra("password")
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         // Menampilkan username dan password
         binding.txtusername.text = user
@@ -121,6 +124,25 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnToLima.setOnClickListener {
             startActivity(Intent(this, LimaActivity::class.java))
+        }
+
+        binding.btnToEnam.setOnClickListener {
+            startActivity(Intent(this, EnamActivity::class.java))
+        }
+
+        binding.btnlogout2.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Apakah Anda yakin ingin keluar?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+                    dialog.dismiss()
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
+                .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
+                .show()
         }
     }
 }

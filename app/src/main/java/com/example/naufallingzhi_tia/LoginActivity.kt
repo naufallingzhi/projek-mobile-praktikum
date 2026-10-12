@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -34,27 +35,34 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        // Kondisi jika isLogin bernilai true
+        val isLogin = sharedPref.getBoolean("isLogin", false)
+        if (isLogin) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            return
+        }
         // Tombol Login
         binding.btnlogin.setOnClickListener {
 
             val user = binding.isiusername.text.toString()
             val pass = binding.isipassword.text.toString()
 
-            // Intent LoginActivity -> MainActivity
-            val intent = Intent(this, MainActivity::class.java)
-
-            intent.putExtra("username", user)
-            intent.putExtra("password", pass)
-
-            startActivity(intent)
-
-            Log.d("Output", "Username: $user Password: $pass")
-
-            Toast.makeText(
-                this,
-                "Username $user Password $pass",
-                Toast.LENGTH_LONG
-            ).show()
+            if (user.isNotEmpty() && user == pass) {
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLogin", true)
+                editor.putString("username", user)
+                editor.apply()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            } else {
+                AlertDialog.Builder(this)
+                    .setTitle("Login Gagal")
+                    .setMessage("Silahkan coba lagi")
+                    .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                    .show()
+            }
         }
     }
 }
