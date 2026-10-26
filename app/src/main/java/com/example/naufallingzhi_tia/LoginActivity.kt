@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.naufallingzhi_tia.Home.pertemuan6.BaseActivity
 import com.example.naufallingzhi_tia.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -54,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", user)
                 editor.apply()
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, BaseActivity::class.java))
                 finish()
             } else {
                 AlertDialog.Builder(this)

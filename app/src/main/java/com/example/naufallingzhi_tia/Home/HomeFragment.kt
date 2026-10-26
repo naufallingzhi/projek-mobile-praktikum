@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.naufallingzhi_tia.DetailActivity
+import com.example.naufallingzhi_tia.Home.Pertemuan9.NineActivity
 import com.example.naufallingzhi_tia.Home.pertemuan5.LimaActivity
 import com.example.naufallingzhi_tia.Home.pertemuan6.EnamActivity
 import com.example.naufallingzhi_tia.LoginActivity
@@ -127,6 +128,9 @@ class HomeFragment : Fragment() {
 
         binding.btnToEnam.setOnClickListener {
             startActivity(Intent(requireContext(), EnamActivity::class.java))
+        }
+        binding.btnToSembilan.setOnClickListener {
+            startActivity(Intent(requireContext(), NineActivity::class.java))
         }
 
         binding.btnlogout2.setOnClickListener {
